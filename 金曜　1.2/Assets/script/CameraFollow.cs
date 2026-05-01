@@ -1,7 +1,8 @@
+using System.Threading.Tasks;
 using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
-    public Transform target; // プレイヤー
+    public Tansform target; // プレイヤー
     public Vector3 offset = new Vector3(0, 5, -7);
     public float smoothSpeed = 5f;
     [Header("Mouse Rotate")]
@@ -12,7 +13,7 @@ public class CameraFollow : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         yaw = target.eulerAngles.y;
     }
-    void LateUpdate()
+    async Task LateUpdate()
     {
         if (target == null) return;
         // マウス左右のみ
