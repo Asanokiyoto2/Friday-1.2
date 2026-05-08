@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
-    public Tansform target; // プレイヤー
+    public Transform target; // プレイヤー
     public Vector3 offset = new Vector3(0, 5, -7);
     public float smoothSpeed = 5f;
     [Header("Mouse Rotate")]
