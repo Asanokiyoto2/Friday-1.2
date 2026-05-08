@@ -2,7 +2,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float moveSpeed = 3f;
-    public int hp = 2;
+    public int hp = 1;
     private Transform player;
     void Start()
     {
