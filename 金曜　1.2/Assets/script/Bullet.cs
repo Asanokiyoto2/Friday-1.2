@@ -1,13 +1,21 @@
 using UnityEngine;
 public class Bullet : MonoBehaviour
 {
+    public float lifeTime = 3f;
     void Start()
     {
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, lifeTime);
     }
-
-    void Update()
+    void OnTriggerEnter(Collider other)
     {
-
+        if (other.CompareTag("Enemy"))
+        {
+            Enemy enemy = other.GetComponent<Enemy>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage(1);
+            }
+            Destroy(gameObject);
+        }
     }
 }
