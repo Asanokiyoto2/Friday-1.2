@@ -18,7 +18,8 @@ public class PlayerController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
+        Vector3 move =
+            new Vector3(moveInput.x, 0f, moveInput.y);
         rb.linearVelocity = move * moveSpeed;
     }
     public void OnMove(InputAction.CallbackContext context)
@@ -34,8 +35,10 @@ public class PlayerController : MonoBehaviour
                 firePoint.position,
                 firePoint.rotation
             );
-            Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-            bulletRb.linearVelocity = firePoint.forward * bulletSpeed;
+            Rigidbody bulletRb =
+                bullet.GetComponent<Rigidbody>();
+            bulletRb.linearVelocity =
+                firePoint.forward * bulletSpeed;
         }
     }
     public void TakeDamage(int damage)
