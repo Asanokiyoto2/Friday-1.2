@@ -6,11 +6,12 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject, lifeTime);
     }
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
-            Enemy enemy = other.GetComponent<Enemy>();
+            Enemy enemy =
+                other.GetComponent<Enemy>();
             if (enemy != null)
             {
                 enemy.TakeDamage(1);
